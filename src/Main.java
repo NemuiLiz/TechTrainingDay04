@@ -1,4 +1,4 @@
-import shapes.Point;
+import shapes.*;
 
 //test comment
 
@@ -13,5 +13,20 @@ public class Main {
         System.out.println(point3);
         System.out.println(point4);
 
+        Point newPoint = PointUtils.addPoint(point1, point2);
+        System.out.println("New " + newPoint);
+
+        Vector vector1 = new Vector(3, 9, 4);
+        System.out.println(vector1);
+
+        Circle circle = new Circle();
+        circle.calcCircleArea(4);
+        circle.calcCircleSurface(4);
+
+        Triangle triangle = new Triangle(5, 5);
+        triangle.calcTriangleArea();
+
+        Rectangle rectangle = new Rectangle(4, 4);
+        rectangle.calcRectangleArea();
     }
 }
