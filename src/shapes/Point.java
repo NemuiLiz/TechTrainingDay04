@@ -1,6 +1,5 @@
 package shapes;
 
-import java.util.Scanner;
 
 public class Point {
     double x;

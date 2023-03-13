@@ -1,5 +1,6 @@
 import shapes.Point;
 
+//test comment
 
 public class Main {
 
