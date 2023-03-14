@@ -1,8 +1,8 @@
 package shapes;
 
-import Interface.GeometricShapes;
 
-public class Circle implements GeometricShapes {
+
+public class Circle extends GeometricShapes {
 
     Point centerPoint;
     double radius;

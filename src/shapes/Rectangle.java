@@ -1,8 +1,7 @@
 package shapes;
 
-import Interface.GeometricShapes;
 
-public class Rectangle implements GeometricShapes {
+public class Rectangle extends GeometricShapes {
 
     Point topLeft, topRight, bottomLeft, bottomRight;
 

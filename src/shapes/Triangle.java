@@ -1,8 +1,8 @@
 package shapes;
 
-import Interface.GeometricShapes;
 
-public class Triangle implements GeometricShapes {
+
+public class Triangle extends GeometricShapes {
 
     private Point pointA;
     private Point pointB;
