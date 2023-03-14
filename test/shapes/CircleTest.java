@@ -1,22 +1,27 @@
 package shapes;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CircleTest {
 
-    private Circle circle1;
-    private Circle circle2;
+   private Circle circle;
+   private final double DELTA = 0.01;
+
+   @BeforeEach
+   void initCircle() {
+      circle = new Circle(new Point(5, 5), 5);
+   }
 
     @Test
-    void calcCircleArea() {
-        circle1.calcCircleArea(4);
-
-       // assertEquals(28.27, circle1.area);
+    void calcArea() {
+       assertEquals(78.54, circle.calcArea(), DELTA);
     }
 
-    void calcCircleSurface() {
-        circle1.calcCircleSurface(5);
+    @Test
+    void calcCircumference() {
+       assertEquals(31.4159, circle.calcCircumference(), DELTA);
     }
 }

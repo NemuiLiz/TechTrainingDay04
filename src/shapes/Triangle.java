@@ -1,25 +1,35 @@
 package shapes;
 
-public class Triangle {
+import Interface.GeometricShapes;
 
-    double width;
-    double height;
+public class Triangle implements GeometricShapes {
 
-    public Triangle() {
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
+
+    public Triangle(Point pointA, Point pointB, Point pointC) {
+        this.pointA = pointA;
+        this.pointB = pointB;
+        this.pointC = pointC;
     }
 
-    public Triangle(double width, double height) {
-        this.width = width;
-        this.height = height;
+    @Override
+    public double calcArea() {
+        double area = pointA.getX() * pointB.getY()
+                + pointB.getX() * pointC.getY()
+                + pointC.getX() * pointA.getY()
+                - (pointA.getY() * pointB.getX()
+                + pointB.getY() * pointC.getX()
+                + pointC.getY() * pointA.getX());
+        return Math.abs(area * 0.5);
     }
 
-    public void calcTriangleArea() {
-        double triangleArea = (width * height) /2;
-        System.out.println("\nArea of triangle is " + triangleArea);
-    }
-
-    public void calcTriangleSurface() {
-        double triangleSurface = 1/2 * width * height;
-        System.out.println("\nSurface of triangle is " + triangleSurface);
+    @Override
+    public double calcCircumference() {
+        double aToB = Math.sqrt(Math.pow(pointB.getX() - pointA.getX(), 2) + Math.pow(pointB.getY() - pointA.getY(), 2));
+        double btoC = Math.sqrt(Math.pow(pointC.getX() - pointB.getX(), 2) + Math.pow(pointC.getY() - pointB.getY(), 2));
+        double cToA = Math.sqrt(Math.pow(pointA.getX() - pointC.getX(), 2) + Math.pow(pointA.getY() - pointC.getY(), 2));
+        return aToB + btoC + cToA;
     }
 }

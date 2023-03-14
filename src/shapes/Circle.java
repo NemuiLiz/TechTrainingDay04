@@ -1,24 +1,22 @@
 package shapes;
 
-public class Circle {
+import Interface.GeometricShapes;
 
+public class Circle implements GeometricShapes {
+
+    Point centerPoint;
     double radius;
 
-    public Circle() {
-    }
-
-    public Circle(double radius) {
+    public Circle(Point centerPoint, double radius) {
+        this.centerPoint = centerPoint;
         this.radius = radius;
     }
 
-    public double calcCircleArea(double radius) {
-        double area = 2 * radius * Math.PI;
-        System.out.println("\nArea of circle is " + area);
-        return area;
+    public double calcArea() {
+        return Math.PI * radius * radius;
     }
 
-    public void calcCircleSurface(double radius) {
-        double surface = Math.PI * (radius * radius);
-        System.out.println("\nSurface of circle is " + surface);
+    public double calcCircumference() {
+        return 2 * Math.PI * radius;
     }
 }

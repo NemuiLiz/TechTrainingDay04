@@ -10,6 +10,8 @@ public class Main {
         Point point2 = new Point(6, 8);
         Point point4 = point1.multiplyPoint(2);
         Point point3 = point1.addPoint(point2);
+        Point point5 = new Point(1, 30);
+
         System.out.println(point3);
         System.out.println(point4);
 
@@ -19,14 +21,14 @@ public class Main {
         Vector vector1 = new Vector(3, 9, 4);
         System.out.println(vector1);
 
-        Circle circle = new Circle();
-        circle.calcCircleArea(4);
-        circle.calcCircleSurface(4);
+        Circle circle = new Circle(point5, 20);
+        circle.calcArea();
+        circle.calcCircumference();
 
-        Triangle triangle = new Triangle(5, 5);
-        triangle.calcTriangleArea();
+        Triangle triangle = new Triangle(point1, point2, point3);
+        triangle.calcArea();
 
-        Rectangle rectangle = new Rectangle(4, 4);
-        rectangle.calcRectangleArea();
+        Rectangle rectangle = new Rectangle(new Point(5, 5), new Point(10, 5), new Point(5, 2), new Point(10,2));
+        rectangle.calcArea();
     }
 }

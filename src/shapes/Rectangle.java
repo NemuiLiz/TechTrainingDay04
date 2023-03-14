@@ -1,25 +1,27 @@
 package shapes;
 
-public class Rectangle {
+import Interface.GeometricShapes;
 
-    double width;
-    double height;
+public class Rectangle implements GeometricShapes {
 
-    public Rectangle() {
+    Point topLeft, topRight, bottomLeft, bottomRight;
+
+    public Rectangle(Point topLeft, Point topRight, Point bottomLeft, Point bottomRight) {
+        this.topLeft = topLeft;
+        this.topRight = topRight;
+        this.bottomLeft = bottomLeft;
+        this.bottomRight = bottomRight;
     }
 
-    public Rectangle(double width, double height) {
-        this.width = width;
-        this.height = height;
+    public double calcArea() {
+        double tempHeight = Math.abs(bottomLeft.getY() - topLeft.getY());
+        double tempWidth = Math.abs(topRight.getX() - topLeft.getX());
+        return tempWidth * tempHeight;
     }
 
-    public void calcRectangleArea() {
-        double rectangleArea = width + height + width + height;
-        System.out.println("\nArea of rectangle is " + rectangleArea);
-    }
-
-    public void calcRectangleSurface() {
-        double rectangleSurface = width * height;
-        System.out.println("\nSurface of rectangle is " + rectangleSurface);
+    public double calcCircumference() {
+        double tempHeight = Math.abs(bottomLeft.getY() - topLeft.getY());
+        double tempWidth = Math.abs(topRight.getX() - topLeft.getX());
+        return 2 * tempWidth + 2 * tempHeight;
     }
 }
